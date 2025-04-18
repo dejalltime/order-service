@@ -16,6 +16,8 @@ services:
       - ORDER_DB_URI=${ORDER_DB_URI}
       - ORDER_DB_NAME=${ORDER_DB_NAME}
       - ORDER_DB_COLLECTION_NAME=${ORDER_DB_COLLECTION_NAME}
+      - ORDER_QUEUE_PORT=${ORDER_QUEUE_PORT}
+      - ORDER_QUEUE_TRANSPORT=${ORDER_QUEUE_TRANSPORT}
     networks:
       - backend_services
 

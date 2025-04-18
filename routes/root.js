@@ -15,4 +15,8 @@ module.exports = async function (fastify, opts) {
   fastify.get('/hugs', async function (request, reply) {
     return { hugs: fastify.someSupport() }
   })
+
+  fastify.get('/', async function (request, reply) {
+    return 'this is an example'
+  })
 }

@@ -1,5 +1,4 @@
 version: "3.7"
-
 services:
   order-service:
     image: dejmartins/order-service:latest
@@ -8,8 +7,15 @@ services:
     ports:
       - 3000:3000
     environment:
-      - AZURE_SERVICEBUS_CONNECTION_STRING=
-      - AZURE_SERVICEBUS_QUEUE=orders
+      - ORDER_QUEUE_URI=${ORDER_QUEUE_URI}
+      - ORDER_QUEUE_HOSTNAME=${ORDER_QUEUE_HOSTNAME}
+      - ORDER_QUEUE_USERNAME=${ORDER_QUEUE_USERNAME}
+      - ORDER_QUEUE_PASSWORD=${ORDER_QUEUE_PASSWORD}
+      - ORDER_QUEUE_NAME=${ORDER_QUEUE_NAME}
+      - USE_WORKLOAD_IDENTITY_AUTH=${USE_WORKLOAD_IDENTITY_AUTH}
+      - ORDER_DB_URI=${ORDER_DB_URI}
+      - ORDER_DB_NAME=${ORDER_DB_NAME}
+      - ORDER_DB_COLLECTION_NAME=${ORDER_DB_COLLECTION_NAME}
     networks:
       - backend_services
 
